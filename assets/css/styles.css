@@ -1,0 +1,319 @@
+body {
+    /*background: linear-gradient(90deg, rgba(149,89,153,1) 0%, rgba(134,66,139,1) 35%, rgba(113,33,119,1) 100%);*/
+    /*background-color: #8EC5FC;
+    background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);*/
+    /*background-color: #712177;
+    background-image: linear-gradient(62deg, #712177 0%, #1f2377 100%);*/
+    background: #f2f4f8;
+    font-family: Poppins, sans-serif;
+}
+
+h1, h3, h4 {
+    text-align: center;
+    margin: 0px;
+}
+
+h3, h4 {
+    font-weight: normal;
+}
+
+h1 {
+    font-size: 9vw;
+}
+
+h3 {
+    font-size: 7vw;
+}
+
+h4 {
+    font-size: 4vw;
+}
+
+img {
+    cursor: zoom-in;
+    user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.split {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.left {
+    left: 0;
+}
+
+.right {
+    right: 0;
+}
+
+/* If you want the content centered horizontally and vertically */
+.centered {
+    cursor: pointer;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    /*background: #262626;*/
+    background: white;
+    /*border-radius: 20px;*/
+    border-top-right-radius: 10px;
+    padding: 9%;
+    width: 40%;
+    height: auto;
+    /*box-shadow: 0 13px 27px -5px #32325d40, 0 8px 16px -8px #0000004d, 0 -6px 16px -6px #00000008;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);*/
+    box-shadow: 0 14px 26px rgba(0,0,0,0.04);
+    transition: all 0.3s ease-out;
+}
+
+.centered:hover {
+    transform: translate(-50%, -52%) scale(1.005) translateZ(0);
+    box-shadow: 0 24px 36px rgba(0,0,0,0.11),
+    0 24px 46px #262626;
+}
+
+
+.image-container, .text-container {
+    display: flex;
+    justify-content: center;
+}
+
+.image-container img {
+    margin: 5%;
+    border-radius: 8px;
+    box-shadow: 0 13px 27px -5px #32325d40, 0 8px 16px -8px #0000004d, 0 -6px 16px -6px #00000008;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+h2 {
+    color: #262626;
+    font-size: 1.8vw;
+}
+
+.button-container button {
+    margin: 50px;
+    width: 8vw;
+    height: 3vw;
+    border-radius: 44px;
+    border-color: black;
+    background-color: white;
+    /*box-shadow: 0 13px 27px -5px #32325d40, 0 8px 16px -8px #0000004d, 0 -6px 16px -6px #00000008;*/
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    transition-duration: .3s;
+}
+
+
+button {
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: black;
+    color: white;
+}
+
+#confidence-container {
+    /*display: flex;*/
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#confidence-container label {
+    margin: 0 10px;
+}
+
+#btn-validate {
+    display: none;
+}
+
+#score {
+    font-weight: bold;
+}
+
+.border-label {
+    text-align: center;
+    align-items: center;
+    display: flex;
+}
+
+input[type="radio"] {
+    cursor: pointer;
+    display: none;
+}
+
+#confident-label, #not-confident-label {
+    font-weight: bold;
+}
+
+#confident-label {
+    margin-right: 20px;
+    color: #33a474;
+}
+
+#not-confident-label {
+    margin-left: 20px;
+    color: #88619a;
+}
+
+/* Style the custom radio button */
+.radio-button {
+    display: inline-block;
+    border-radius: 50%;
+    margin-right: 10px;
+    vertical-align: middle;
+    cursor: pointer;
+    transition-duration: .4s;
+}
+
+.big-selector {
+    width: 3.646vw;
+    height: 3.646vw;
+}
+
+.medium-selector {
+    width: 2.865vw;
+    height: 2.865vw;
+}
+
+/* Style the big custom radio button */
+.confident-selector.radio-button {
+    border: 3px solid #33a474;
+}
+
+/* Style the medium custom radio button */
+.not-confident-selector.radio-button {
+    border: 3px solid #88619a;
+}
+
+/* Style the small custom radio button */
+.neutral-selector.radio-button {
+    border: 3px solid #343c4b;
+    width: 2.083vw;
+    height: 2.083vw;
+}
+
+/* Style the custom radio button when hovered */
+.confident-selector.radio-button:hover {
+    background-color: #33a474;
+    transition-duration: .4s;
+}
+
+.not-confident-selector.radio-button:hover {
+    background-color: #88619a;
+    transition-duration: .4s;
+}
+
+.neutral-selector.radio-button:hover {
+    background-color: #343c4b;
+    transition-duration: .4s;
+}
+
+/* Style the custom radio button when selected */
+input[type="radio"]:checked + .confident-selector.radio-button {
+    background-color: #33a474;
+}
+
+input[type="radio"]:checked + .not-confident-selector.radio-button {
+    background-color: #88619a;
+}
+
+input[type="radio"]:checked + .neutral-selector.radio-button {
+    background-color: #343c4b;
+}
+
+.icon-experiment {
+    width: 60%;/*160px;*/
+    height: auto;
+    border-radius: 50%;
+}
+
+/* Image Zoom In and Out */
+
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 99; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    cursor: zoom-out;
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 75%;
+    cursor: zoom-out;
+}
+
+.caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(1)}
+    to {-webkit-transform:scale(2)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0.4)}
+    to {transform:scale(1)}
+}
+
+@-webkit-keyframes zoom-out {
+    from {transform:scale(1)}
+    to {transform:scale(0)}
+}
+@keyframes zoom-out {
+    from {transform:scale(1)}
+    to {transform:scale(0)}
+}
+
+.modal-content, .caption {
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+.out {
+    animation-name: zoom-out;
+    animation-duration: 0.6s;
+}
+
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+    }
+}
